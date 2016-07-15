@@ -18,9 +18,10 @@ $(function() {
 		bannerSlider.next()
 	});
 });
-
-    $(function (){
-        var newclass1 = new Slider($('#newclass1'),{
+      
+        
+    function box(id){
+        var newclass1 = new Slider($(id),{
             time: 5000,
             delay: 400,
             event: 'hover',
@@ -29,12 +30,20 @@ $(function() {
             controller: $(''),
             activeControllerCls: 'active'
         });
-        $('#newclass1 .left').click(function() {
+        $(id).find(".left").click(function() {
             newclass1.prev()
         });
-        $('#newclass1 .right').click(function() {
+        $(id).find('.right').click(function() {
             newclass1.next()
         });
-    });
+      
+    };
+    var id1="#newclass1";box(id1);
+    var id2="#newclass2";box(id2);
+    var id3="#newclass3";box(id3);
+    var id4="#newclass4";box(id4);
+    
+
+
 };
 

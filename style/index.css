@@ -43,10 +43,13 @@ li {
 }
 .loginbar span a{
     color: #fefefe;
-
 }
+
+
 /*
 开始banner样式*/
+
+
 .flexslider {
 	position: relative;
 	width: 100%;
@@ -143,11 +146,12 @@ li {
 
 
 /*content开始*/
+
 .content{
-    height: 1120px;
+    height: 1090px;
     width: 1027px;
     margin: 0 auto;
-    position: relative
+    position: relative;   
 }
 /*//按钮部分*/
 .content-button li a{
@@ -163,66 +167,52 @@ li {
 
 }
 .left {
-	margin: -35px 0 0 -30px;
+	margin: -9px 0 0 -33px;
 	background: url(../images/left.png) ;
 }
 .right{
-	margin: -35px 0 0 960px;
+	margin: -9px 0 0 958px;
 	background: url(../images/right.png);
 }
 
+
 /*内容第一部分*/
+.content-wrap{
+    width: 1030px;
+    height: 250px;
+    margin-top: 10px;
+    position: relative;
+}
+
 .content1{
     width: 1027px;
-    height: 255px;
-    position: absolute;
-    top: 10px;
+    height: 230px;
     overflow: hidden;
 	zoom: 1;
 }
-.content1 ul{
-    width: 950px;
-}
-
-.content2{
-    width: 1027px;
-    height: 255px;
-    background: #ccc;
-    position: absolute;
-    top:275px;
+.column{
+      font-size: 18px;
+    margin-left: 40px;
 }
 .content3{
     width: 1027px;
     height: 255px;
-    background: #eee;
     position: absolute;
     top:540px;
     overflow: hidden;
 	zoom: 1;
 }
-.content4{
-    width: 1027px;
-    height: 210px;
-    background: yellow;
-    position: absolute;
-    top:805px;
-}
 .content-new{
     width: 1027px;
-    height: 250px;
-    background: red;
-    
+    height: 225px;  
 }
 .content-new1{/**/
     width:950px;
-    height:250px;
+        height: 210px;
     margin-left: 40px;
+    margin-top: 20px;
     float: left;
-    background: green;
-    
-}
-.content-new1 span{
-    font-size: 18px;
+  
 }
 .course{
     width: 950px;
@@ -249,13 +239,24 @@ li {
     padding:0 0 6px 9px;
 }
 
+
 /*内容第二部分*/
+
+
+.content2{
+    width: 1027px;
+    height: 225px;
+    margin-top: 10px;
+   
+}
 .course2-large{
-   width: 570px;
+   width: 569px;
     height: 210px;
-    background: yellow;
+     float: left;
+}
+.span2{
     position: absolute;
-    top:32px;
+    left: 20
 }
 .pic{
     position: relative;
@@ -267,32 +268,152 @@ li {
     float: left;
     z-index: 1;
 }
-.pic-msg{
- position: absolute;
+.pic-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 300px;
+    color: aliceblue;
+}
+.pic-top span{
+    font-size: 30px;
+}
+.pic-bottom{
+    position: absolute;
     left: 0;
     bottom: 0;
       z-index: 2;
     background: black;
     opacity: 0.5;
     width: 370px;
-    color: aliceblue;
+    color: #ffffff;
 }
-.pic span{
+.pic-bottom span{
     padding-left: 10px;
      width: 100px;
     float: left;
-  
+    font-size: 15px; 
 }
 .pic p{
     height: 10px;
-     width: 100px;
+    width: 100px;
     margin: 0;
     float: right;
+    font-size: 15px;
+    
 }
 .msg{
     width: 185px;
     height: 200px;
     margin: 15px 0 0 0;
-    background: red;
-     float: right;
+    float: right;
 }
+.msg p{
+    font-size: 12px;
+    line-height: 22px;
+    color: #999999;
+    height: 104px;
+    
+}
+.course2-right{
+    width: 376px;
+    height: 210px;
+    float: right;
+}
+.course2-right ul {
+    width: 376px;
+    height: 210px;
+    padding: 0;
+    margin: 0;
+}
+.course2-right ul li{
+  float: left;
+  padding: 0 7px 10px 0px;
+    position: relative;
+    z-index: 1;
+    height: 99px;
+    }
+.img-top{
+    position: absolute;
+    top:0px;  
+}
+.img-top span{
+    font-size: 30px;
+    color: #ffffff;
+}
+.img-bott{
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    z-index: 2;
+    width: 180px;
+    background: black;
+    opacity: 0.5;
+    color: aliceblue;
+    font-size: 12px;
+}
+.course2-right ul li div p{
+ width: 50px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.course2-right ul li div  span{
+    padding-left: 5px;
+}
+
+
+
+
+/*开始第四部分*/
+.content-wrap4{
+     width: 1030px;
+    height: 250px;
+    margin-top: 10px;
+}
+.content4{
+    width: 1027px;
+    height: 210px;
+    position: absolute;
+    top:805px;
+    left: 0;
+}
+.content4-new{
+     width: 970px;
+    height: 210px;
+    margin: 0 auto;
+}
+.content4-new ul{
+      width: 970px;
+    height: 210px;
+}
+.content4-new ul li{
+    float: left;
+   padding: 7px;
+  
+}
+
+
+/*开始脚部*/
+   .footer_min{
+    padding:50px 0 60px 0;
+    text-align: center;
+       border-top:1px solid #dddddd;
+    }
+    .footer_min div{
+    margin:0 auto;
+    padding:10px 0;
+    }
+    .footer_min span {
+    color: #999999;
+    bottom:3px;
+    position: relative;
+    }
+    .footer_min a{
+    font-size:12px;
+    color: #999999;
+    font-family:SimSun;
+    }
+
+
