@@ -115,3 +115,14 @@ var BrowserDetect = {
 
 };
 BrowserDetect.init();
+
+
+ 
+
+  window.onload=function(){if(BrowserDetect.browser=='Internet Explorer'&&BrowserDetect.version<=7){
+      window.open('notSupported.html');
+window.opener=null;window.open('','_self');window.close()
+
+  }}();
+
+
