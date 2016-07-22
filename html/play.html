@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放页</title>
+        <script src="../style/public/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="../style/play.css">
+</head>
+    <script>
+        window.onload=function(){
+           var num=document.getElementById('play-column').scrollHeight;
+            var pox=$('.play-column').scrollTop();
+  
+ $('.bot-button').click(function(){
+   
+      $('.play-column').scrollTop($('.play-column').scrollTop()+110);
+ 
+      pox=$('.play-column').scrollTop()+110;
+     if(pox>num-345)pox=0;
+     
+   })
+               $('.top-button').click(function(){
+      
+         $('.play-column').scrollTop($('.play-column').scrollTop()-110);
+      
+    }) 
+       
+    $('.player-video ul div em').css('display','none');
+             $('.player-video ul div em').eq(0).css('display','block');
+         $('.player-video li').css('border','1px solid black')  ; 
+              $('.player-video li').eq(0).css('border','5px solid #0066cc');
+    $('.player-video div').click(function(){
+    /*     alert($(this).index());*/
+    $('.player-video ul div em').css('display','none');
+        $('.player-video ul div em').eq($(this).index()).css('display','block');
+             $('.player-video li').css('border','1px solid black')  
+     $('.player-video li').eq($(this).index()).css('border','5px solid #0066cc')  
+   
+    })
+    
+$('.row-fluid-err  a').click(function (){
+       
+$('.matright-err').css('background','#f5f5f5').css('color','black'); 
+  $('.matright-err').eq($(this).index()).css('background','#0968c6').css('color','red'); 
+	 
+})
+    //单选js
+  $('.row-fluid  a').click(function (){
+       
+$('.matright10').css('background','#f5f5f5').css('color','black'); 
+       $('.matright10').eq($(this).index()).css('background','#0968c6').css('color','red'); 
+ $('.matright10').attr('id','');
+    $('.matright10').eq($(this).index()).attr('id','1');
+ 
+    /*if(($('.matright10').eq($(this).index()).css('color'))=='RGB(255,0,0)'){
+          alert(11);
+      }else{
+          alert(22);
+      }*/
+    //alert($('.matright10').eq($(this).index()).attr('value')); 	 
+})
+ 
+//多选JS
+           function getclick(id){
+             var i=1;   
+             $(id).click(function(){   
+            if(i%2==0){    
+              $(id).css('background','#f5f5f5').css('color','black');
+                
+            }else{
+               $(id).css('background','#0968c6').css('color','red');
+             
+     	}  i++;     })}
+          
+            getclick('.matright2');
+              getclick('.matright1');
+                getclick('.matright3');
+                  getclick('.matright4');
+                  
+  
+    //提交js
+        /*  $('.button').click(function(){
+             alert($('#1').attr('value')) 
+          })*/
+           
+
+                  $('.button').click(function(){         
+
+           
+              alert($('#1').attr('value'));
+              
+              
+                
+             
+               
+     
+           })    
+            
+/*       
+      if( clickNumber/2=0){
+    
+            else{
+                
+            }
+            clickNumber++;
+        })*/
+  
+         
+        }
+    
+    </script>
+<body >
+<div class="header" style="height:240px;width:100%;background:red;"></div>
+    <div class="wrap">
+        <div class="vdieo-course">
+        <div class="small-nav">
+         <a>huanwei</a> >
+         <a>分类1</a> >
+         <a>TCP协议</a>
+        </div>
+        <div class="course-nav">
+        TCP协议
+        </div>
+        <div class="player">
+          <div class="player-top">
+            <div class="play">
+              <div id="a1"></div>
+<script type="text/javascript" src="../style/public/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+	var flashvars={
+		p:0,
+		e:1,
+		i:'http://www.ckplayer.com/static/images/cqdw.jpg'
+		};
+	var video=['http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4->video/mp4'];
+	var support=['all'];
+	CKobject.embedHTML5('a1','ckplayer_a1',755,417,video,flashvars,support);
+</script>
+
+              
+              
+              </div>
+            </div>  
+            <div class="play-right">
+                <div class="top-button">shang</div>
+               
+                <div class="play-column" id="play-column">
+                  <div class="player-video">
+                      <ul>
+                          <div>
+                              <em></em>
+                              <li>1</li>
+                          </div>
+                            <div>
+                              <em></em>
+                              <li>2</li>
+                          </div>
+                          <div>
+                              <em></em>
+                              <li>3</li>
+                          </div>
+                            <div>
+                              <em></em>
+                              <li>4</li>
+                          </div>
+                              <div>
+                              <em></em>
+                              <li>5</li>
+                          </div>
+                              <div>
+                              <em></em>
+                              <li>6</li>
+                          </div>
+                                <div>
+                              <em></em>
+                              <li>6</li>
+                          </div>
+                              <div>
+                              <em></em>
+                              <li>7</li>
+                          </div>
+                              <div>
+                              <em></em>
+                              <li>8</li>
+                          </div>
+                            
+                      </ul>
+                     
+                    </div>
+                </div>
+                 <div class="bot-button">xiang</div>
+            </div>
+        </div>
+    </div>
+        <div class="course-content">
+		<div class="sidebarleft">
+        <div class="teacher">
+            <span class="teacher-title">课程信息</span>
+            <div class="teacher-content">
+            
+            <img src="">
+            <p>获得电学学士学位...</p>
+            <div class="pic-right">
+                <div><span>讲师:</span>
+                <span>xxx</span></div>
+                <div> <span>官陪</span> | 
+                  <span>工程师</span></div>
+                 
+                 <div><span>国富光启</span></div> 
+                </div>
+            </div>
+              <div class="course-right">
+              <span>TCP协议</span>
+                <p>集数：<span>16</span>(1小时35分) | 中文字幕 | 中文</p>
+                    <p>知识点：<span>管理培训</span></p>
+                  <p>课程简介：xxxxxxxxxxxxxxxxxxx...</p>
+            
+            </div>
+          
+        </div>
+            <div class="question">
+                <div style="width:500px;height:30px;background:red">
+             <ul>
+                <li>课后练习1</li>
+                 <li>课后练习2</li>
+                 <li>讨论</li>
+                </ul>
+                </div>
+                                <div class="question-wrap">
+								<div class="question-header backf8f8f8">
+									<div class="Knowledgetitle">
+										<input type="hidden" id="id_subject" value="">
+										<input type="hidden" id="id_eid" value="11e6-33a8-7326e5da-94cb-15558ac53d5">
+										<input type="hidden" id="id_knames" value="百艇汇">
+										<input type="hidden" id="id_txType" value="1">
+										<span class="fragenummer">1</span>				
+										<span>知识点：</span>
+										
+												<input type="hidden" class="id_kids" id="id_kids" value="1187">
+										
+										
+												<span class="icon id_knames">百艇汇</span>
+										
+										<span class="pull-right emblem">判断</span>
+									</div>
+								</div>
+				<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
+18.0pt">帆船的动力是什么？</span></p></span>
+                   </div>
+								
+									<div class="padbottom15 padtop6 magtop5">
+										
+
+										
+										
+										<div class="row-fluid-err btn-group" style="width:95%;" data-toggle="buttons-radio">
+										
+											
+											<a class="btn matright-err" value='' id=''>是</a>
+											
+											<a class="btn matright-err" value='' id=''>否</a>
+											
+											
+										</div>
+									</div>
+								
+							</div>
+                <div class="question-wrap">
+								<div class="question-header backf8f8f8">
+									<div class="Knowledgetitle">
+										<input type="hidden" id="id_subject" value="">
+										<input type="hidden" id="id_eid" value="11e6-33a8-7326e5da-94cb-15558ac53d5">
+										<input type="hidden" id="id_knames" value="百艇汇">
+										<input type="hidden" id="id_txType" value="1">
+										<span class="fragenummer">1</span>				
+										<span>知识点：</span>
+										
+												<input type="hidden" class="id_kids" id="id_kids" value="1187">
+										
+										
+												<span class="icon id_knames">百艇汇</span>
+										
+										<span class="pull-right emblem">单选</span>
+									</div>
+								</div>
+				<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
+18.0pt">帆船的动力是什么？</span></p></span>
+                    <p><span style="font-size:18.0pt">A.</span><span style="font-size:
+18.0pt">汽油</span></p>
+                <p> <span style="font-size:18.0pt">B.</span><span style="font-size:
+18.0pt">柴油</span></p></span>
+            <p><span style="font-size:18.0pt">C.</span><span style="font-size:
+18.0pt">风力</span></p>
+            <p><span style="font-size:18.0pt">D.</span><span style="font-size:
+18.0pt">人力</span></p></div>
+								
+									<div class="padbottom15 padtop6 magtop5">
+										
+
+										
+										
+										<div class="row-fluid btn-group" style="width:95%;" data-toggle="buttons-radio">
+										
+											
+											<a class="btn matright10" value='A' id=''>A</a>
+											
+											<a class="btn matright10" value='b' id=''>B</a>
+											
+											<a class="btn matright10" value='c' id=''>C</a>
+											
+											<a class="btn matright10" value='d' id=''>D</a>
+											
+										</div>
+									</div>
+								
+							</div>
+            
+                            <div class="question-wrap">
+								<div class="question-header backf8f8f8">
+									<div class="Knowledgetitle">
+										<input type="hidden" id="id_subject" value="">
+										<input type="hidden" id="id_eid" value="11e6-33a8-7326e5da-94cb-15558ac53d5">
+										<input type="hidden" id="id_knames" value="百艇汇">
+										<input type="hidden" id="id_txType" value="1">
+										<span class="fragenummer">1</span>				
+										<span>知识点：</span>
+										
+												<input type="hidden" class="id_kids" id="id_kids" value="1187">
+										
+										
+												<span class="icon id_knames">百艇汇</span>
+										
+										<span class="pull-right emblem">多选</span>
+									</div>
+								</div>
+					<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
+18.0pt">帆船的动力是什么？</span></p></span>
+                    <p><span style="font-size:18.0pt">A.</span><span style="font-size:
+18.0pt">汽油</span></p>
+                <p> <span style="font-size:18.0pt">B.</span><span style="font-size:
+18.0pt">柴油</span></p></span>
+            <p><span style="font-size:18.0pt">C.</span><span style="font-size:
+18.0pt">风力</span></p>
+            <p><span style="font-size:18.0pt">D.</span><span style="font-size:
+18.0pt">人力</span></p></div>
+								
+									<div class="padbottom15">
+										
+
+										
+										
+										<div class="row-fluid2 btn-group" style="width:95%;" data-toggle="buttons-radio">
+										
+											
+											<a class="btn matright1" value='A'>A</a>
+											
+											<a class="btn matright2" value='b'>B</a>
+											
+											<a class="btn matright3" value='c'>C</a>
+											
+											<a class="btn matright4" value='d'>D</a>
+											
+										</div>
+									</div>
+								
+							</div>
+            </div>
+        <button class='button addin' style="float:right;margin:0 10px 10px 0 ">提交</button>
+		</div>
+    
+		 <div class="sidebarright">
+                    <div class="sidebar1">
+                        <div class="mycourse">
+                            <p>我的进度</p>
+                        </div>
+                        <div class="coursechapter1">
+                            <div class="chapter">
+                                <p>第一节 简介第一节 简介第一节 简介第一节 简介</p>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="chapter">
+                                <p>第一节 简介</p>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="chapter">
+                                <p>第一节 简介</p>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="chapter">
+                                <p>第一节 简介</p>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/work2.png"></a>
+                                <span><img src="../images/next2.png"></span>
+                                <a href="#"><img src="../images/video2.png"></a>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxshadow">
+                        <div class="boxshadow_l"></div>
+                        <div class="boxshadow_r"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+
+                    <div class="sidebar2">
+                        <div class="mycourse">
+                            <p>谁听过课</p>
+                        </div>
+                        <div class="coursechapter2">
+                            <ul class="peoplelist">
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="../images/sidebar1_03.jpg">
+                                    </span>
+                                    <p>石佳华</p>
+                                </li>
+
+                            </ul>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="boxshadow">
+                        <div class="boxshadow_l"></div>
+                        <div class="boxshadow_r"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+
+                    <div class="sidebar3">
+                        <div class="mycourse">
+                            <p>公司部门</p>
+                        </div>
+                        <div class="coursechapter3">
+                            <div class="sector">
+                                <a class="sector_icon" href="#"><img src="../images/company_sector_01.jpg"></a>
+                                <div>
+                                    <a class="sector_name" href="#">产品部</a>
+                                    <p class="sector_num"><span>成员：</span>2555</p>
+                                    <a class="addin" href="#"><p class="add1">+</p><p class="add2">加入</p></a>
+                                </div>
+                            </div>
+                            <div class="sector">
+                                <a class="sector_icon" href="#"><img src="../images/company_sector_01.jpg"></a>
+                                <div>
+                                    <a class="sector_name" href="#">产品部</a>
+                                    <p class="sector_num"><span>成员：</span>2555</p>
+                                    <a class="addin" href="#"><p class="add1">+</p><p class="add2">加入</p></a>
+                                </div>
+                            </div>
+                            <div class="sector">
+                                <a class="sector_icon" href="#"><img src="../images/company_sector_01.jpg"></a>
+                                <div>
+                                    <a class="sector_name" href="#">产品部</a>
+                                    <p class="sector_num"><span>成员：</span>2555</p>
+                                    <a class="addin" href="#"><p class="add1">+</p><p class="add2">加入</p></a>
+                                </div>
+                            </div>
+                            <div class="sector">
+                                <a class="sector_icon" href="#"><img src="../images/company_sector_01.jpg"></a>
+                                <div>
+                                    <a class="sector_name" href="#">产品部</a>
+                                    <p class="sector_num"><span>成员：</span>2555</p>
+                                    <a class="addin" href="#"><p class="add1">+</p><p class="add2">加入</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxshadow">
+                        <div class="boxshadow_l"></div>
+                        <div class="boxshadow_r"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+        </div>
+		</div>
+</body>
+</html>

@@ -43,7 +43,19 @@ $(function() {
     var id3="#newclass3";box(id3);
     var id4="#newclass4";box(id4);
     
+/*
 
-
+if(document.picc){
+    document.onselectstart= function(){return false;}; //for ie
+}else{
+    document.onmousedown= function(){return false;};
+    document.onmouseup= function(){return true;};
+}
+document.onselectstart = new Function('event.returnValue=false;');
+*/
+    var picc=document.getElementById("picc");
+picc.onselectstart = picc.ondrag = function(){
+    return false;
+}
 };
 

@@ -1,0 +1,419 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    
+}
+img{ border:none}
+*{
+	 margin: 0;
+    padding: 0;
+}
+li{
+	list-style:none;
+}
+a{
+    color: #1f7da9;
+    text-decoration: none;
+}
+.wrap{
+    width:1000px;
+
+    margin: 0 auto;
+}
+.vdieo-course{
+    height: 557px;
+}
+.small-nav{
+    width: 280px;
+    height: 20px;
+    background: yellow;
+    margin: 25px 0 0 0;
+}
+.course-nav{
+    background: #eee;
+    margin: 25px 0 0 0;
+}
+.player{
+    width: 1000px;
+    height: 430px;
+    margin: 20px 0 0 0;
+   
+}
+.player-top{
+    width: 770px;
+    height: 430px;
+    background: #ffffff;
+    position: relative;
+    float: left;
+}
+.play{
+    width: 755px;
+    height: 417px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+.play-right{
+    width: 220px;
+    height: 430px;
+    float: left;
+    position: relative;
+    background: #efefef;
+}
+.play-column{
+    width: 200px;
+    height:345px;
+    margin: 15px 10px;
+    overflow:auto;
+}
+.play-column:-webkit-scrollbar-button{
+    background-color:#FF7677;
+}
+
+.player-video{
+    width: 160px;
+    height: 600px;
+}
+.player-video ul{
+    padding: 0;
+    margin-left: 10px;
+}
+.player-video li{
+    height: 94px;
+    width: 152px;
+    margin: 12px 5px;
+    list-style: none;
+  
+}
+.player-video ul div{
+    position: relative;
+}
+.player-video  em{
+   border-width: 8px;
+    border-color: transparent #0066cc transparent  transparent ;
+        border-style: dashed dashed  solid  dashed ;
+    position: absolute;
+       left: -11px;
+    top: 40px;
+}
+/*滚动条样式*/
+.play-column::-webkit-scrollbar
+        {
+            width: 8px;
+            height: 10px;
+            background-color: #cecece;
+        }
+.play-column::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+            background-color: #B5B0B0;
+        }
+.play-column::-webkit-scrollbar-thumb
+        {
+            border-radius: 66px;
+            background-color: #8A8686;
+            height:30px;
+        }
+
+
+/*课程介绍 导师部分*/
+
+.course-content{
+	  background-color: #ffffff;
+}
+.sidebarleft{
+	width:760px;
+	background-color: #ffffff;
+    float:left;
+	border: 1px solid #cccccc;
+}
+.teacher{
+    height:220px;
+    width: 730px;
+   margin: 0px 10px;
+  
+     
+}
+.teacher-title{
+    width: 710px;
+    padding: 17px;
+    border-bottom: 2px solid #0066cc;
+    display: block;
+}
+.teacher-content{
+    width: 223px;
+    height: 130px;
+    margin: 8px 5px;
+    position: relative;
+    border-right: 1px dashed #ccc; 
+     float: left;
+   
+}
+.teacher-content img{
+    width: 88px;
+    height: 85px;
+    border: 1px solid black;
+    margin: 3px;
+}
+.teacher-content  p{
+    font-size: 12px;
+    margin-top: 12px;
+     margin-left:3px;
+}
+.pic-right{
+    position: absolute;
+    top:8px;
+    left: 105px;
+}
+.pic-right div{
+    width: 110px;
+    padding: 5px 0px;
+   font-size: 12px;
+   
+}
+.course-right{
+    width: 490px;
+    height: 130px;
+    float: right;
+    margin-top: 7px;
+}
+.course-right p{
+    padding: 3px;0px;
+}
+.course-right p span{
+    color: #9bc5d9;
+}
+
+
+
+.question ul{
+    width: 500px;
+}
+
+.question ul li{
+    float: left;
+    padding: 0 20px;
+}
+
+
+
+
+
+
+ .backf8f8f8 {
+    background: #f8f8f8;
+}
+.Knowledgetitle {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+    margin-left: 10px;
+}
+.fragenummer {
+    display: inline-block;
+    height: 40px;
+    width: 36px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #5cba86;
+}
+.icon {
+    border: 1px solid #5bc289;
+    padding: 0px 2px;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 12px;
+    background: #5bc289;
+    margin-right: 7px;
+}
+.emblem {
+    display: inline-block;
+    height: 18px;
+    width: 49px;
+    background: url(../images/emblem.png) no-repeat;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    padding-left: 3px;
+    margin-top: 10px;
+    float: right;
+}
+.padbottom15 a {
+    display: inline-block;
+    padding: 4px 40px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    margin:10px;
+	}
+.btn-group {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin: 0 0 10px 30px;
+}
+.question-content{
+    width: 500px;
+    height: 160px;
+    margin-left: 20px;
+}
+
+/*右侧边*/
+.sidebarright{
+    width:227px;
+    float: right;
+
+}
+
+.sidebar1{
+    border:1px solid #cccccc;
+}
+.mycourse{
+    padding:7px 9px 3px 9px;
+}
+.mycourse p{
+    height:43px;
+    line-height:43px;
+    font-size:20px;
+    font-family:"Microsoft YaHei";
+    border-bottom:2px solid #0066cc;
+}
+.coursechapter1{
+    padding:2px 8px 15px 26px;
+}
+.chapter{
+    padding:13px 12px 17px 1px;
+}
+.chapter p{
+    font-size:18px;
+    font-family:"SimSun";
+    font-weight:bold;
+    line-height:30px;
+    white-space:normal;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+.chapter a{
+    width:25px;
+    height:25px;
+    display: block;
+    float: left;
+    padding-top:15px;
+    padding-bottom:1px;
+}
+.chapter span{
+    display: block;
+    float: left;
+    width:6px;
+    height:25px;
+    line-height:25px;
+    padding:15px 10px 1px 10px;
+}
+.boxshadow {
+    height: 4px;
+}
+
+.boxshadow_l {
+    width:100px;
+    height:4px;
+    float: left;
+    background: url(../images/bg_box_footer.png) no-repeat 0 0;
+}
+.boxshadow_r {
+    width:100px;
+    float: right;
+    background: url(../images/bg_box_footer.png) no-repeat right -4px;
+    height: 4px;
+}
+
+.sidebar2{
+    margin-top:35px;
+    border:1px solid #cccccc;
+}
+.coursechapter2{
+    padding:5px 4px 10px 4px;
+}
+.peoplelist li{
+    float: left;
+   padding:10px 11px;
+}
+.peoplelist li p{
+    font-size:12px;
+    font-family:"SimSun";
+    text-align: center;
+}
+
+.sidebar3{
+    margin-top:35px;
+    border:1px solid #cccccc;
+}
+.coursechapter3{
+    padding:5px 4px 10px 4px;
+}
+.coursechapter3 .sector{
+    overflow: hidden;
+    padding:10px 8px;
+}
+.sector .sector_icon{
+    float: left;
+}
+.sector div{
+    padding-left:20px;
+    float: left;
+}
+.addin{
+    width: 59px;
+    height:24px;
+    display: block;
+    line-height:24px;
+    background-color: #f99d19;
+    border:1px solid #dc6718;
+    border-radius:2px;
+}
+.sector .sector_name{
+    font-size:14px;
+    line-height:14px;
+}
+.sector .sector_num{
+    font-size:12px;
+    line-height:30px;
+}
+.sector .addin .add1{
+    float: left;
+    font-size: 20px;
+    font-weight:bold;
+    padding:0 4px 0 10px;
+}
+.sector .addin .add2{
+    float: left;
+    font-size: 12px;
+    font-weight:bold;
+}
+
+/*右侧边颜色*/
+.mycourse p{
+    color: #0066cc;
+}
+.chapter p{
+    color:#333333;
+}
+.sidebar1,.sidebar2,.sidebar3{
+    background-color: #ffffff;
+}
+.peoplelist li p{
+    color: #1f7da9;
+}
+.sector .addin{
+    color: #fffef1;
+}

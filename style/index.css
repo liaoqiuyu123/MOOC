@@ -26,6 +26,11 @@ li {
 }
 .logo img{
     padding-top: 15px;
+	-moz-user-select: none; 
+-webkit-user-select: none; 
+-ms-user-select: none; 
+-khtml-user-select: none; 
+user-select: none;
 }
 .loginbar{
     width: 150px;
@@ -63,11 +68,10 @@ li {
     margin: 0;
     padding: 0;
 }
-.flexslider .slides li{
-	width: 100%;
-}
-.flexslider .slides li img{
-width: 100%;
+
+.flexslider .slides li {
+
+    overflow: hidden;
 height:460px;
     display: block;
 	}
@@ -186,7 +190,7 @@ height:460px;
 .content-wrap{
     width: 1030px;
     height: 250px;
-    margin-top: 10px;
+    margin-top: 50px;
     position: relative;
 }
 
@@ -218,6 +222,7 @@ height:460px;
     margin-left: 40px;
     margin-top: 20px;
     float: left;
+        position: absolute;
   
 }
 .course{
@@ -253,6 +258,7 @@ height:460px;
     width: 1027px;
     height: 225px;
     margin-top: 10px;
+    position: absolute;
    
 }
 .course2-large{
@@ -294,6 +300,7 @@ height:460px;
     opacity: 0.7;
     width: 370px;
     color: #ffffff;
+	    filter:alpha(opacity=70);   
 }
 .pic-bottom span{
     padding-left: 10px;
@@ -304,9 +311,10 @@ height:460px;
 .pic p{
     height: 10px;
     width: 100px;
-    margin: 0;
+    margin: 0 8px 0 0 ;
     float: right;
     font-size: 15px;
+    text-align: right;
     
 }
 .msg{
@@ -358,12 +366,14 @@ height:460px;
     opacity: 0.7;
     color: aliceblue;
     font-size: 12px;
+	    filter:alpha(opacity=70);   
 }
 .course2-right ul li div p{
  width: 50px;
     float: right;
-    margin: 0;
+    margin: 0 5px 0 0;
     padding: 0;
+    text-align: right;
 }
 .course2-right ul li div  span{
     padding-left: 5px;
@@ -376,27 +386,31 @@ height:460px;
 .content-wrap4{
      width: 1030px;
     height: 250px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 .content4{
-    width: 1027px;
     height: 210px;
     position: absolute;
-    top:805px;
     left: 0;
 }
 .content4-new{
      width: 970px;
     height: 210px;
     margin: 0 auto;
+
+}
+.content4-but{
+       position: absolute;
 }
 .content4-new ul{
       width: 970px;
     height: 210px;
+  
+   
 }
 .content4-new ul li{
     float: left;
-   padding: 7px;
+   padding: 0 13px 8px 0;
   
 }
 

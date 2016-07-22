@@ -7,7 +7,7 @@ window.onload =function(){
 		$(".nav_list li a").css('background-color','transparent');
 		$(".nav_list li").eq($(this).index()).find('a').css('background-color','#003366');
 	})
-	
+
 	/*---课程图片轮播部分---*/
 	var banner_min = 1;
 	var times_min = setInterval(poxMin,2000);
@@ -24,9 +24,9 @@ window.onload =function(){
 		$(".course_inform_min ul li a").eq(banner_min).css('border-left-style','none');
 		$(".course_content").css('display','none').eq(banner_min).css('display','block');
 		if(banner_min == 0){
-			$(".course_inform1").css('border-top','2px solid #0053a5');
+			$(".course_inform1").css('border-top','2px solid #0053a5').css('padding-top','0');
 		}else{
-			$(".course_inform1").css('border-top-style','none');
+			$(".course_inform1").css('border-top-style','none').css('padding-top','2px');
 		}
 		banner_min++;
 	}
@@ -35,7 +35,7 @@ window.onload =function(){
     $(".course_inform_min ul li").eq(0).css('background-color','#0066cc').find('p').css('color','#fff');
 	$(".course_inform_min ul li em").eq(0).css('border-style','dashed dashed dashed solid').css('border-color','transparent transparent transparent #fefefe');
 	$(".course_inform_min ul li a").eq(0).css('border-left-style','none');
-	$(".course_inform_min ul li").eq(0).find('a').css('border-top','2px solid #0053a5');
+	$(".course_inform_min ul li").eq(0).find('a').css('border-top','2px solid #0053a5').css('padding-top','0').css('height','112px');
     $(".course_content").css('display','none').eq(0).css('display','block');
 
     $("#round_min li").hover(function(){
@@ -52,9 +52,9 @@ window.onload =function(){
 		$(".course_inform_min ul li a").eq($(this).index()).css('border-left-style','none');
 		$(".course_inform_min ul li").eq($(this).index()).find('p').css('color','#fff');
 		if($(this).index()==0){
-			$(".course_inform1").css('border-top','2px solid #0053a5');
+			$(".course_inform1").css('border-top','2px solid #0053a5').css('padding-top','0');
 		}else{
-			$(".course_inform1").css('border-top-style','none');
+			$(".course_inform1").css('border-top-style','none').css('padding-top','2px');
 		}
 		},
 			function () {
@@ -78,9 +78,9 @@ window.onload =function(){
 		$(".course_inform_min ul li a").eq($(this).index()).css('border-left-style','none');
 		$(".course_inform_min ul li").eq($(this).index()).find('p').css('color','#fff');
 		if($(this).index()==0){
-					$(".course_inform1").css('border-top','2px solid #0053a5');
+					$(".course_inform1").css('border-top','2px solid #0053a5').css('padding-top','0');
 		}else{
-			$(".course_inform1").css('border-top-style','none');
+			$(".course_inform1").css('border-top-style','none').css('padding-top','2px');
 		}
 
         },
@@ -89,4 +89,27 @@ window.onload =function(){
 				times_min = setInterval(poxMin,1000);
 			}
 	);
-}
+
+    
+    //课程play JS
+      $('.pic-span').css('display','none');
+    
+      $('.picc-top').css('display','none');
+      $('.course_list_min li').hover(function(){
+      $('.picc-top').css('display','none'); 
+      $('.picc-top') .eq($(this).index()).css('display','block');
+      $('.pic-span').css('display','none');
+      $('.pic-span') .eq($(this).index()).css('display','block');
+           
+        
+    },function(){
+           $('.picc-top').css('display','none');
+          $('.pic-span').css('display','none');
+          
+      });
+      
+    //logo 不被选中JS
+        var picc=document.getElementById("picc_min");
+picc.onselectstart = picc.ondrag = function(){
+    return false;
+}}

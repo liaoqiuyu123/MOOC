@@ -39,6 +39,14 @@ a{
 .logo_min{
     width:100%;
     height:85px;
+	
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
 }
 .logo_min div{
     width:973px;
@@ -96,6 +104,7 @@ a{
     height:100px;
     position: absolute;
     top:320px;
+    filter:alpha(opacity=70);   
 }
 .course_content{
     width:615px;
@@ -104,6 +113,11 @@ a{
     position: absolute;
 	top:340px;
 	left:20px;
+}
+.course_content p{
+	word-wrap:break-word; 
+	word-break:break-all; 
+	width: 535px;
 }
 .course_figure_min ul{
     width:85px;
@@ -208,16 +222,38 @@ a{
     font-size: 12px;
     color: #999999;
     font-family:SimSun;
+	float:left;
 }
 .course_maker_min3{
     font-size: 12px;
     color: #999999;
     font-family:"Arial";
 }
+.course_makerspan1{
+	float: right;
+}
+.course_makerspan2{
+	padding-right:5px;
+}
 
 .course_list_figure{
     height:135px;
     border:1px solid #cccccc;
+}
+.picc-top{
+    width:208px;
+    height:135px;
+    position:absolute; 
+    opacity:0.3;
+    background:black;
+    filter:alpha(opacity=30);   
+}
+.pic-span{
+    position:absolute;
+    width:200px;
+    height:135px;
+    background: url(../images/play.png) no-repeat center ;
+    
 }
 .course_list_figure img{
     width:100%;
