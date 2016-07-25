@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>播放页</title>
         <script src="../style/public/jquery.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="../style/play.css">
+   <link rel="stylesheet" type="text/css" href="../style/play2.css">
 </head>
     <script>
         window.onload=function(){
@@ -140,6 +140,48 @@ $(".box").css('display','block')
              $('.submit').click(function(){
            alert("已提交");
         })
+             
+                  /*答案按钮部分*/
+            function lll(ansid,conid){
+                       $(ansid).click(function(){
+            if($(conid).css('display')=='none')
+            {$(conid).css('display','block')
+             $(ansid).html('收起答案');
+            
+            }
+                   else{$(conid).css('display','none')
+                       $(ansid).html('查看答案');};
+        }
+               )
+                
+            } 
+       
+            lll('.ans-button1','.ans_content');   
+            lll('.ans-button2','.ans_content2');
+            
+           
+            
+              $('.ans_content ul li').eq(0).css('border-bottom','1px solid black');
+               $('.ans_content ul li').eq(1).css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
+            $('.two').css('display','block')
+             $('.one').css('display','none')
+            
+           $('.ans_content ul li').click(function(){
+                if($('.ans_content ul li').eq(0).css('border-bottom-width')=='1px'){
+                   $('.ans_content ul li').eq(0).css('border-bottom','none').css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
+                $('.ans_content ul li').eq(1).css('border-bottom','1px solid black').css('border-top','none').css('border-left','none').css('border-right','none');
+                    $('.one').css('display','block')
+                         $('.two').css('display','none')
+                    
+                } 
+               else{
+                   $('.ans_content ul li').eq(1).css('border-bottom','none').css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
+                $('.ans_content ul li').eq(0).css('border-bottom','1px solid black').css('border-top','none').css('border-left','none').css('border-right','none'); 
+                        $('.one').css('display','none')
+                         $('.two').css('display','block')
+               }
+           })    
+        
         }
             
 /*       
@@ -151,7 +193,9 @@ $(".box").css('display','block')
             clickNumber++;
         })*/
 
-         
+   
+        
+      
        
     
     </script>
@@ -321,7 +365,7 @@ function BoxAdapt(){
             <!--练习，讨论开始-->
                       <div class="classify">
                         <ul class="classifys" id="classifys">
-                            <li>课后练习1<img src="../images/nothing.png"></li>
+                            <li>课后练习1<img src="../images/%E5%85%A8%E5%AF%B9.png"></li>
 							<li>课后练习2<img src="../images/nothing.png"></li>
 							<li>讨论</li>
                               <p>请完成本课练习继续下一课</p>
@@ -357,38 +401,41 @@ function BoxAdapt(){
 										<input type="hidden" id="id_knames" value="百艇汇">
 										<input type="hidden" id="id_txType" value="1">
 										<span class="fragenummer">1</span>				
-										<span>知识点：</span>
-										
+										<span>完成于：2014-9-4 14:22</span>
+                                        <span class="pull-right emblem">判断</span>
+                                        <ul class="small-title">
+                                     
+                                             <li><p>来源：华为</p></li>
+                                             <li> <p>难度：★★★☆☆</p></li>
+                                             <li><p>正确率：80%</p></li>
+                                             <li><p>耗时：20:13</p></li>
+                                            <li><p>答题次数：222</p></li>
+                                            
+                                        </ul>
+
 												<input type="hidden" class="id_kids" id="id_kids" value="1187">
 										
 										
-												<span class="icon id_knames">百艇汇</span>
-										
-										<span class="pull-right emblem">判断</span>
 									</div>
 								</div>
-				<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
-18.0pt">帆船的动力是什么？</span></p></span>
-                   </div>
-								
-									<div class="padbottom15 padtop6 magtop5">
-										
-
-										
-										
-										<div class="row-fluid-err btn-group" style="width:95%;" data-toggle="buttons-radio">
-										
-											
-											<a class="btn matright-err" value='' id=''>是</a>
-											
-											<a class="btn matright-err" value='' id=''>否</a>
-											
-											
-										</div>
+				<div class='question-content'>
+                    <div class="text-centent"><p>xxxxxxxxxxxxxxxxxx..</p></div>
+                    <div style="margin-top:5px;"><p>【你的答案】D</p></div>
+                     <div class='ans-button' style="margin-top:5px;text-align:right;width:720px;"><span class="ans-button1">查看答案</span></div>
+                    
+                    <div  class="ans_content" style="display:none">
+                    <div style="width:534px;height:29px;border-bottom: 1px solid black;
+    float: right;"></div>
+                    <ul><li>答案</li><li>解析</li></ul> 
+                    <div class='one'>1</div>
+                        <div class='two'>2</div>
+                    
+                    
+                    </div>
 									</div>
 								
 							</div>
-                <div class="question-wrap">
+                             <div class="question-wrap">
 								<div class="question-header backf8f8f8">
 									<div class="Knowledgetitle">
 										<input type="hidden" id="id_subject" value="">
@@ -396,98 +443,35 @@ function BoxAdapt(){
 										<input type="hidden" id="id_knames" value="百艇汇">
 										<input type="hidden" id="id_txType" value="1">
 										<span class="fragenummer">1</span>				
-										<span>知识点：</span>
-										
+										<span>完成于：2014-9-4 14:22</span>
+                                        <span class="pull-right emblem">判断</span>
+                                        <ul class="small-title">
+                                     
+                                             <li><p>来源：华为</p></li>
+                                             <li> <p>难度：★★★☆☆</p></li>
+                                             <li><p>正确率：80%</p></li>
+                                             <li><p>耗时：20:13</p></li>
+                                            <li><p>答题次数：222</p></li>
+                                            
+                                        </ul>
+
 												<input type="hidden" class="id_kids" id="id_kids" value="1187">
 										
 										
-												<span class="icon id_knames">百艇汇</span>
-										
-										<span class="pull-right emblem">单选</span>
 									</div>
 								</div>
-				<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
-18.0pt">帆船的动力是什么？</span></p></span>
-                    <p><span style="font-size:18.0pt">A.</span><span style="font-size:
-18.0pt">汽油</span></p>
-                <p> <span style="font-size:18.0pt">B.</span><span style="font-size:
-18.0pt">柴油</span></p></span>
-            <p><span style="font-size:18.0pt">C.</span><span style="font-size:
-18.0pt">风力</span></p>
-            <p><span style="font-size:18.0pt">D.</span><span style="font-size:
-18.0pt">人力</span></p></div>
-								
-									<div class="padbottom15 padtop6 magtop5">
-										
-
-										
-										
-										<div class="row-fluid btn-group" style="width:95%;" data-toggle="buttons-radio">
-										
-											
-											<a class="btn matright10" value='A' id=''>A</a>
-											
-											<a class="btn matright10" value='b' id=''>B</a>
-											
-											<a class="btn matright10" value='c' id=''>C</a>
-											
-											<a class="btn matright10" value='d' id=''>D</a>
-											
-										</div>
+				<div class='question-content'>
+                    <div class="text-centent"><p>xxxxxxxxxxxxxxxxxx..</p></div>
+                    <div style="margin-top:5px;"><p>【你的答案】D</p></div>
+                     <div class='ans-button' style="margin-top:5px;text-align:right;width:720px;"><span class="ans-button2">查看答案</span></div>
+                    
+                    <div  class="ans_content2" style="display:none">11</div>
 									</div>
 								
 							</div>
-            
-                            <div class="question-wrap">
-								<div class="question-header backf8f8f8">
-									<div class="Knowledgetitle">
-										<input type="hidden" id="id_subject" value="">
-										<input type="hidden" id="id_eid" value="11e6-33a8-7326e5da-94cb-15558ac53d5">
-										<input type="hidden" id="id_knames" value="百艇汇">
-										<input type="hidden" id="id_txType" value="1">
-										<span class="fragenummer">1</span>				
-										<span>知识点：</span>
-										
-												<input type="hidden" class="id_kids" id="id_kids" value="1187">
-										
-										
-												<span class="icon id_knames">百艇汇</span>
-										
-										<span class="pull-right emblem">多选</span>
-									</div>
-								</div>
-					<div class='question-content'><span style="line-height:2.0em;font-size:18px;"><p><span style="font-size:18.0pt">OP</span><span style="font-size:
-18.0pt">帆船的动力是什么？</span></p></span>
-                    <p><span style="font-size:18.0pt">A.</span><span style="font-size:
-18.0pt">汽油</span></p>
-                <p> <span style="font-size:18.0pt">B.</span><span style="font-size:
-18.0pt">柴油</span></p></span>
-            <p><span style="font-size:18.0pt">C.</span><span style="font-size:
-18.0pt">风力</span></p>
-            <p><span style="font-size:18.0pt">D.</span><span style="font-size:
-18.0pt">人力</span></p></div>
-								
-									<div class="padbottom15">
-										
-
-										
-										
-										<div class="row-fluid2 btn-group" style="width:95%;" data-toggle="buttons-radio">
-										
-											
-											<a class="btn matright1" value='A'>A</a>
-											
-											<a class="btn matright2" value='b'>B</a>
-											
-											<a class="btn matright3" value='c'>C</a>
-											
-											<a class="btn matright4" value='d'>D</a>
-											
-										</div>
-									</div>
-								
+                
+                
 							</div>
-             <button class='button addin' style="float:right;margin:0 10px 10px 0 ">提交</button>
             </div>
              <div class="discuss" style="display:none;">第二个课后练习
          <button class='button addin' style="float:right;margin:0 10px 10px 0 ">提交</button>
