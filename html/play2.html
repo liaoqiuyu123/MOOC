@@ -111,8 +111,8 @@ $('.matright10').css('background','#f5f5f5').css('color','black');
                 $(".more").css('display','none');
             });
             $(".myreply").click(function(){
-                $(".publish_idea2").css('display','block');
-                $(".more").css('display','none');
+                $(".publish_idea2").show();
+                $(".more").hide();
             })
     //提交js
         /*  $('.button').click(function(){
@@ -141,8 +141,8 @@ $(".box").css('display','block')
            alert("已提交");
         })
              
-                  /*答案按钮部分*/
-            function lll(ansid,conid){
+               
+/*            function lll(ansid,conid){
                        $(ansid).click(function(){
             if($(conid).css('display')=='none')
             {$(conid).css('display','block')
@@ -157,30 +157,82 @@ $(".box").css('display','block')
             } 
        
             lll('.ans-button1','.ans_content');   
-            lll('.ans-button2','.ans_content2');
+            lll('.ans-button2','.ans_content2');*/
+             
+             
+               /*答案按钮部分*/
+   
+                        var n=1;
+                       $('.ans_content').each(function(){
+                         
+                           $(this).attr('id',n);
+                           n++;
+                       })
+                       
+              $('.answer:odd').css('border-bottom','1px solid #ccc');
+              $('.answer:even').css('border-top','1px solid #ccc').css('border-left','1px solid #ccc').css('border-right','1px solid #ccc');
+              $('.one:even').show();
+                $('.one:odd').hide();
+             
+              $('.ans_content').hover(function(){
+                 
+              var id=$(this).attr('id');
+              
             
-           
-            
-              $('.ans_content ul li').eq(0).css('border-bottom','1px solid black');
-               $('.ans_content ul li').eq(1).css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
-            $('.two').css('display','block')
-             $('.one').css('display','none')
-            
-           $('.ans_content ul li').click(function(){
-                if($('.ans_content ul li').eq(0).css('border-bottom-width')=='1px'){
-                   $('.ans_content ul li').eq(0).css('border-bottom','none').css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
-                $('.ans_content ul li').eq(1).css('border-bottom','1px solid black').css('border-top','none').css('border-left','none').css('border-right','none');
-                    $('.one').css('display','block')
-                         $('.two').css('display','none')
+              $('#'+id).find('li').click(function(){
+              
+    
+              $('#'+id).find('li').css('border-bottom','1px solid #ccc').css('border-top','none').css('border-left','none').css('border-right','none');
+              $('#'+id).find('li').eq($(this).index()).css('border-bottom','none').css('border-top','1px solid #ccc').css('border-left','1px solid #ccc').css('border-right','1px solid #ccc');
+              $('#'+id).find('.one').hide();
+              $('#'+id).find('.one').eq($(this).index()).show();
                     
-                } 
-               else{
-                   $('.ans_content ul li').eq(1).css('border-bottom','none').css('border-top','1px solid black').css('border-left','1px solid black').css('border-right','1px solid black');
-                $('.ans_content ul li').eq(0).css('border-bottom','1px solid black').css('border-top','none').css('border-left','none').css('border-right','none'); 
-                        $('.one').css('display','none')
-                         $('.two').css('display','block')
-               }
-           })    
+                
+             
+           }) 
+                   
+               })
+              
+                    $('.ans-button span').click(function(){
+           var t= $('.ans-button span').index(this);
+                           
+            if($('.ans_content').eq(t).css('display')=='none')
+            {
+             $('.ans_content').eq(t).show();
+             $('.ans-button span').eq(t).html('收起答案');
+        /*        $('#'+id).find('.one').hide();
+              $('#'+id).find('.one').eq(0).show();*/
+            }
+                   else{
+                       $('.ans_content').eq(t).hide();
+                       $('.ans-button span').eq(t).html('查看答案')
+                   
+                       };
+                           
+                          
+                           
+        })
+                /*答案按钮部分完成*/
+     
+    /* var pp= document.getElementsByClassName('answer');
+            alert(pp.length);*/
+        /*    this.elements=[];
+            for(t=0;t<$('.answer').length;t++){
+                 this.elements.push(t);
+            }
+                alert(this.elements[2]); */
+        /*        alert($('.ans_content ul').length)  */
+                
+        /*    $('.ans_content ul li').click(function(){
+               alert($(this).index());;
+                
+            })*/
+                       
+                   /* var p=   $('.ans_content ul').index(this)*/
+                      
+   
+            
+   
         
         }
             
@@ -420,15 +472,23 @@ function BoxAdapt(){
 								</div>
 				<div class='question-content'>
                     <div class="text-centent"><p>xxxxxxxxxxxxxxxxxx..</p></div>
-                    <div style="margin-top:5px;"><p>【你的答案】D</p></div>
+                    <div style="margin-top:5px;"><p>【你的答案】<span style="color:green">D</span></p></div>
                      <div class='ans-button' style="margin-top:5px;text-align:right;width:720px;"><span class="ans-button1">查看答案</span></div>
                     
-                    <div  class="ans_content" style="display:none">
-                    <div style="width:534px;height:29px;border-bottom: 1px solid black;
+                    <div  class="ans_content" style="display:none" >
+                    <div style="width:534px;height:29px;border-bottom: 1px solid #ccc;
     float: right;"></div>
-                    <ul><li>答案</li><li>解析</li></ul> 
+                    <ul><li class="answer">答案</li><li class="answer">解析</li></ul> 
                     <div class='one'>1</div>
-                        <div class='two'>2</div>
+                        <div class='one'>xxxxxxxx.....</div>
+                          <div class="info" >
+                        <span>本班答题次数：72</span>
+                              <span>正确率：55%</span>
+                              <span>各选项被选几率：A,10% B,10% C,10% D,10% </span>
+                              <span>平均耗时：2分钟</span>
+                        
+                        
+                        </div>
                     
                     
                     </div>
@@ -442,7 +502,7 @@ function BoxAdapt(){
 										<input type="hidden" id="id_eid" value="11e6-33a8-7326e5da-94cb-15558ac53d5">
 										<input type="hidden" id="id_knames" value="百艇汇">
 										<input type="hidden" id="id_txType" value="1">
-										<span class="fragenummer">1</span>				
+										<span class="fragenummer" style="    background: #ff6667">2</span>				
 										<span>完成于：2014-9-4 14:22</span>
                                         <span class="pull-right emblem">判断</span>
                                         <ul class="small-title">
@@ -462,10 +522,26 @@ function BoxAdapt(){
 								</div>
 				<div class='question-content'>
                     <div class="text-centent"><p>xxxxxxxxxxxxxxxxxx..</p></div>
-                    <div style="margin-top:5px;"><p>【你的答案】D</p></div>
+                    <div style="margin-top:5px;"<p>【你的答案】<span style="color:red">D</span></p></div>
                      <div class='ans-button' style="margin-top:5px;text-align:right;width:720px;"><span class="ans-button2">查看答案</span></div>
                     
-                    <div  class="ans_content2" style="display:none">11</div>
+                    <div  class="ans_content" style="display:none" >
+                    
+                             <div style="width:534px;height:29px;border-bottom: 1px solid #ccc;
+    float: right;"></div>
+                    <ul style="height:50px"><li class="answer">答案</li><li class="answer">解析</li></ul> 
+                    <div class='one'>1</div>
+                        <div class='one'>xxxxxx....</div>
+                        <div class="info" >
+                        <span>本班答题次数：72</span>
+                              <span>正确率：55%</span>
+                              <span>各选项被选几率：A,10% B,10% C,10% D,10% </span>
+                              <span>平均耗时：2分钟</span>
+                        
+                        
+                        </div>
+                    
+                    </div>
 									</div>
 								
 							</div>
@@ -473,102 +549,7 @@ function BoxAdapt(){
                 
 							</div>
             </div>
-             <div class="discuss" style="display:none;">第二个课后练习
-         <button class='button addin' style="float:right;margin:0 10px 10px 0 ">提交</button>
-        </div>
-        
-                    <div class="discuss" style="display: none;">
-                        <div class="publish_idea">
-                            <form>
-                                <div><img src="../images/sidebar1_03.jpg"></div>
-                                <label class="textbox">
-                                    <textarea></textarea>
-                                    <span class="span1"><em></em></span>
-                                    <span class="span2"><em></em></span>
-                                </label><br>
-                                <label class="sub_idea"><input class="addin" type="submit" value="提交(300)"></label>
-                            </form>
-                        </div>
-                        <div class="discuss_show">
-                            <div class="discuss_group">
-                                <span class="group1">最新</span>
-                                <span class="group2">最热</span>
-                            </div>
-                            <span class="totalpage">第1-8条，共200条</span>
-                            <div class="turn_page"><span>上一页</span><span>下一页</span><span>1/25</span></div>
-                            <div style="clear: both;"></div>
-                        </div>
-                        <div class="discuss_list">
-							<div class="under_line">
-                            <div class="member_pic1"><img src="../images/sidebar1_03.jpg"></div>
-                            <div class="member">
-                                <div class="member_top1">
-                                    <span class="member_name">石佳华</span>
-                                    <span class="sub_time">2016.7.20 10:00</span>
-                                </div>
-                                <div style="clear: both;"></div>
-                                <div class="problem">请问视频IP地址后的“/数字”表示什么？数字如何而来？</div>
-                            </div>
-                            <div style="clear:both;"></div>
-                            <div class="reply_member">回答(11)</div>
-                            <div class="hidden_reply">收起回答</div>
-                            <div style="clear:both;"></div>
-                            <div class="reply">
-                                <div class="reply_border">
-                                    <span class="span3"><em></em></span>
-                                    <span class="span4"><em></em></span>
-                                </div>
-                                <div class="member_infor">
-									<div class="dashed_line">
-                                    <div class="member_pic2"><img src="../images/sidebar1_03.jpg"></div>
-                                    <div class="member2">
-                                        <div class="member_top2">
-                                            <span class="member_name">石佳华</span>
-                                            <span class="sub_time">2016.7.20 10:00</span>
-                                        </div>
-                                        <div style="clear: both;"></div>
-                                        <div class="member_reply">请问视频IP地址后的“/数字”表示什么？数字如何而来？请问视频IP地址后的“/数字”表示什么？数字如何而来？请问视频IP地址后的“/数字”表示什么？数字如何而来？请问视频IP地址后的“/数字”表示什么？数字如何而来？请问视频IP地址后的“/数字”表示什么？数字如何而来？
-										</div>
-                                    </div>
-                                    <div style="clear:both;"></div>
-									</div>
-                                </div>
-                                <div class="more">
-                                    <span class="morereply">还有两条回答，<a class="clickmore">点击更多</a></span>
-                                    <span class="myreply">我也答一答</span>
-                                </div>
-
-                                <div class="publish_idea2">
-                                    <form>
-                                        <div><img src="../images/sidebar1_03.jpg"></div>
-                                        <label class="textbox">
-                                            <textarea></textarea>
-                                            <span class="span1"><em></em></span>
-                                            <span class="span2"><em></em></span>
-                                        </label><br>
-                                        <label class="sub_idea"><input type="submit" value="提交(300)"></label>
-                                    </form>
-                                </div>
-                            </div>
-							</div>
-                        </div>
-						<div>
-							<div>
-								<span>1</span>
-								<span>2</span>
-								<span>3</span>
-								<span>4</span>
-								<span>5</span>
-								<span>...</span>
-								<span>25</span>
-							</div>
-							<div>
-								<span>上一页</span>
-								<span>下一页</span>
-								<span>1/25</span>
-							</div>
-						</div>
-                    </div>
+      
          <!--练习，讨论结束-->
 		</div>
 

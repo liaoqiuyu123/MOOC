@@ -79,41 +79,98 @@ $('.matright10').css('background','#f5f5f5').css('color','black');
                   
   
             
-              /*---课后练习和讨论切换---*/
+            /*---课后练习和讨论切换---*/
 			$("#classifys li").click(function(){
                 var index = $(this).index();
 				$("#classifys li").css('color','#999999');
-				$(this).css('color','#0066cc');
+				$(this).css('color','red');
 				$(".discuss").css('display','none');
 				$(".discuss").eq($(this).index()).css('display','block');
                 $(".triangle").css('display','none');
                 $(".triangle").eq(index*2).css('display','block');
                 $(".triangle").eq(index*2+1).css('display','block');
 			});
-                        /*---回答与收起回答---*/
+            /*---回答与收起回答---*/
 			$(".hidden_reply").css('display','none');
 			$(".reply").css('display','none');
 			$(".reply_member").click(function(){
-				$(".hidden_reply").css('display','block');
-				$(".reply").css('display','block');
-				$(".reply_member").css('display','none');
-                $(".member_infor").css('display','none');
-                $(".member_infor").eq(0).css('display','block');
+				var t = $("div .reply_member").index(this);
+				$(this).css('display','none');
+				$(".hidden_reply").eq(t).css('display','block');
+				$(".reply").eq(t).css('display','block');
+                $(".reply").eq(t).find(".member_infor").css('display','none');
+                $(".reply").eq(t).find(".member_infor").eq(0).css('display','block');
 			});
 			$(".hidden_reply").click(function(){
-				$(".hidden_reply").css('display','none');
-				$(".reply").css('display','none');
-				$(".reply_member").css('display','block');
+                var t = $(".hidden_reply").index(this);
+				$(this).css('display','none');
+				$(".reply").eq(t).css('display','none');
+				$(".reply_member").eq(t).css('display','block');
+                $(".reply").eq(t).find(".morereply").css('display','block');
+                $(".reply").eq(t).find(".myreply").css('display','block');
+                $(".reply").eq(t).find(".publish_idea2").css('display','none');
 			});
             /*---点击更多与我也答一答---*/
             $(".clickmore").click(function(){
-                $(".member_infor").css('display','block');
-                $(".more").css('display','none');
+                var t = $("a.clickmore").index(this);
+                $(".reply").eq(t).find(".member_infor").css('display','block');
+                $(".more .morereply").eq(t).css('display','none');
             });
             $(".myreply").click(function(){
-                $(".publish_idea2").css('display','block');
-                $(".more").css('display','none');
-            })
+                var t = $(".myreply").index(this);
+                $(".publish_idea2").eq(t).css('display','block');
+                $(".more .myreply").eq(t).css('display','none');
+            });
+            /*---头部语言选项---*/
+            $(".selectlang li").css('display','none').css('border-top','1px solid #424a4a');
+            $(".selectlang li").eq(0).css('display','block').css('border-top-style','none');
+            $(".selectlang").hover(function(){
+                /*if(i%2 ==1){*/
+                $(".selectlang li").css('display','block');
+                $(".selectlang li").eq(0).find('img').attr('src','../images/language02.png');
+                /*}else{
+                 $(".selectlang li").css('display','none');
+                 $(".selectlang li").eq(0).css('display','block');
+                 $(".selectlang li").eq(0).find('img').attr('src','../images/language01.png');
+                 }*/
+
+                $(".selectlang li").click(function(){
+                    var index = $(this).index();
+                    var value = $(this).text();
+                    if(index !=0){
+                        $(".selectlang li").eq(0).find('span').html(value);
+                        $(".selectlang li").css('display','none');
+                        $(".selectlang li").eq(0).css('display','block');
+                    }
+
+                });
+            },function(){
+                $(".selectlang li").css('display','none');
+                $(".selectlang li").eq(0).css('display','block');
+                $(".selectlang li").eq(0).find('img').attr('src','../images/language01.png');
+            });
+            /*---最新最热---*/
+            $(".group1").click(function () {
+                $(".group1").css('background-color','#e5e4e4').css('color','#0066cc');
+                $(".group2").css('background-color','#dadada').css('color','#666666');
+                $(".discussleft").css('display','block');
+                $(".discussright").css('display','none');
+            });
+            $(".group2").click(function () {
+                $(".group2").css('background-color','#e5e4e4').css('color','#0066cc');
+                $(".group1").css('background-color','#dadada').css('color','#666666');
+                $(".discussleft").css('display','none');
+                $(".discussright").css('display','block');
+            });
+            /*---输入框字数控制---*/
+            $(".textarea").keyup(function(){
+                var len = $(this).val().length;
+                if(len > 299){
+                    $(this).val($(this).val().substring(0,140));
+                }
+                var num = 300 - len;
+                $(".sub_idea input").val('提交('+num+')');
+            });
     //提交js
         /*  $('.button').click(function(){
              alert($('#1').attr('value')) 
@@ -213,7 +270,41 @@ function BoxAdapt(){
         <input id="closed" type="button" value="x" />
     </div> 
     <!--遮罩层结束-->
-<div class="header" style="height:240px;width:100%;background:red;"></div>
+    
+    <!--头部开始-->
+<div class="head_min">
+    <div class="loginbar_min">
+        <div class="loginbar">
+            <div class="language">
+                <ul class="selectlang">
+                    <li class="defaultlang"><span>语言</span><img src="../images/language01.png"></li>
+                    <li>English</li>
+                    <li>简体中文</li>
+                    <li>繁体中文</li>
+                </ul>
+            </div>
+            <div class="login_out">
+                <a class="loginin_min">李XXX，欢迎你</a>
+                <span>|</span>
+                <a href="#">退出</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo_min">
+        <div>
+            <img src="../images/logo_min.png">
+        </div>
+    </div>
+    <div class="nav_min">
+        <ul class="nav_list">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">分类一</a></li>
+            <li><a href="#">分类二</a></li>
+        </ul>
+    </div>
+</div>
+     <!--头部结束-->
     <div class="wrap" style="z-index:5">
       <!--播放器前标题开始-->
         <div class="vdieo-course">
@@ -498,7 +589,7 @@ function BoxAdapt(){
                             <form>
                                 <div><img src="../images/sidebar1_03.jpg"></div>
                                 <label class="textbox">
-                                    <textarea></textarea>
+                                      <textarea class="textarea">亲，登陆了才能讨论</textarea>
                                     <span class="span1"><em></em></span>
                                     <span class="span2"><em></em></span>
                                 </label><br>
@@ -558,7 +649,7 @@ function BoxAdapt(){
                                     <form>
                                         <div><img src="../images/sidebar1_03.jpg"></div>
                                         <label class="textbox">
-                                            <textarea></textarea>
+                                           <textarea class="textarea">亲，登陆了才能讨论</textarea>
                                             <span class="span1"><em></em></span>
                                             <span class="span2"><em></em></span>
                                         </label><br>
